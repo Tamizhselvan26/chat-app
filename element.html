@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        input:focus{
+            
+            outline: none;
+            border-color: rgb(120, 1, 231);}
+         #btn:hover{
+         
+            border: none;
+            
+         }
+         #i2{
+             padding: 15px;
+            
+
+
+         }
+      
+    </style>
+</head>
+<body >
+    
+
+
+
+<h1 style="  overflow: hidden;
+background-color: #333;
+color: white;
+padding: 10px;
+position: fixed; 
+top: 0; 
+width: 100%;" 
+
+id="nav">Chat App</h1>
+    <div class="box" id="mydiv" style="position: fixed; bottom: 70px; 
+    " >    </div>
+
+        <div class="box" id="scroll" style="position: fixed; bottom: 10px;" >
+            <input id="i2" style="border-width: 3px;" ></input>
+            <button id="btn" style="  background: #9ea39e;color: #ebe8e8; border-radius: 5px;padding: 10px; "
+            onclick="sendsms()" >send</button>
+        </div>
+
+
+            <script>
+                function sendsms(){
+                    //value1=document.getElementById("i1").value;
+                    value2=document.getElementById("i2").value;
+                    element=document.createElement("ul");
+                   
+                    if(value2!=""){
+                        text2=document.createTextNode(value2);
+                        element.appendChild(text2);
+                        mydiv=document.getElementById("mydiv");
+                        
+                         
+                        mydiv.appendChild(element);
+                   //element.style.backgroundColor="grey";
+                   element.style.color="white";
+                  
+                   element.style.borderRadius="5px";
+                   //element.style.borderColor="white";
+                   element.style.backgroundColor="#9ea39e";
+                  // mydiv.style.floatRight;
+                   mydiv.style.paddingLeft="140px";
+                  element.style.padding="20px";
+               
+                  // mydiv.style.paddingRight="1200px";
+                   //element.style.scrollTop="30%";
+                        document.getElementById("i2").value="";
+                        setTimeout(() => {
+    var objDiv = document.getElementById('mydiv');
+    objDiv.scrollTop = objDiv.scrollHeight
+}, 0)
+                         
+                       
+                    }
+                   /*if(value2!=""){
+                        text2=document.createTextNode(value2);
+                        element.appendChild(text2);
+                        mydiv=document.getElementById("mydiv");
+                        mydiv.appendChild(element);
+                        document.getElementById("i2").value="";
+                    }*/
+                }
+
+
+            </script>
+</body>
+</html>
